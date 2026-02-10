@@ -27,74 +27,112 @@ body {
     padding: 0 20px;
 }
 
-/* CABEÇALHO CORRIGIDO */
-header {
-    padding: 30px 0;
-    border-bottom: 1px solid var(--cor-borda);
-    position: sticky;
-    top: 0;
-    background-color: rgba(10, 10, 10, 0.95);
-    z-index: 100;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
+/* ============================================
+   CABEÇALHO LIMPO - SEM "MATHEUS FINAMOR"
+   ============================================ */
+
+/* HEADER LIMPO - FORÇAR REMOÇÃO DO NOME */
+.header-clean {
+    all: unset;
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    padding: 30px 0 !important;
+    border-bottom: 1px solid var(--cor-borda) !important;
+    background-color: var(--cor-fundo) !important;
+    width: 100% !important;
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 100 !important;
+    background-color: rgba(10, 10, 10, 0.95) !important;
+    flex-wrap: wrap !important;
 }
 
-nav {
-    display: flex;
-    gap: 30px;
-    align-items: center;
-    flex-wrap: wrap;
-    flex: 1;
+/* Garantir que não haja texto extra */
+.header-clean::before,
+.header-clean::after,
+.header-clean span,
+.header-clean div:not(.language-switcher):not(nav),
+.header-clean h1,
+.header-clean h2,
+.header-clean h3,
+.header-clean h4,
+.header-clean h5,
+.header-clean h6,
+.header-clean p {
+    display: none !important;
+    visibility: hidden !important;
+    content: "" !important;
+    width: 0 !important;
+    height: 0 !important;
+    opacity: 0 !important;
+    overflow: hidden !important;
 }
 
-nav a {
-    color: var(--cor-texto);
-    text-decoration: none;
-    font-weight: 500;
-    transition: color 0.3s;
-    padding: 8px 0;
+/* NAVEGAÇÃO LIMPA */
+.nav-clean {
+    all: unset;
+    display: flex !important;
+    gap: 30px !important;
+    align-items: center !important;
+    flex-wrap: wrap !important;
+    flex: 1 !important;
 }
 
-nav a:hover {
-    color: var(--cor-destaque);
+.nav-clean a {
+    all: unset;
+    color: var(--cor-texto) !important;
+    text-decoration: none !important;
+    font-weight: 500 !important;
+    transition: color 0.3s !important;
+    padding: 8px 0 !important;
+    cursor: pointer !important;
+    font-family: var(--fonte-principal) !important;
+    font-size: 1rem !important;
 }
 
-/* BOTÃO DE IDIOMA CORRIGIDO */
+.nav-clean a:hover {
+    color: var(--cor-destaque) !important;
+}
+
+/* BOTÃO DE IDIOMA */
 .language-switcher {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-left: 20px;
+    display: flex !important;
+    align-items: center !important;
+    gap: 10px !important;
+    margin-left: 20px !important;
 }
 
 .lang-btn {
-    background: none;
-    border: none;
-    color: var(--cor-texto);
-    font-family: var(--fonte-principal);
-    font-size: 0.9rem;
-    font-weight: 500;
-    cursor: pointer;
-    padding: 5px 10px;
-    border-radius: 4px;
-    transition: all 0.3s;
+    background: none !important;
+    border: none !important;
+    color: var(--cor-texto) !important;
+    font-family: var(--fonte-principal) !important;
+    font-size: 0.9rem !important;
+    font-weight: 500 !important;
+    cursor: pointer !important;
+    padding: 5px 10px !important;
+    border-radius: 4px !important;
+    transition: all 0.3s !important;
 }
 
 .lang-btn:hover {
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: rgba(255, 255, 255, 0.1) !important;
 }
 
 .lang-btn.active {
-    color: var(--cor-destaque);
-    font-weight: 600;
+    color: var(--cor-destaque) !important;
+    font-weight: 600 !important;
 }
 
 .lang-separator {
-    color: var(--cor-borda);
-    font-size: 0.9rem;
+    color: var(--cor-borda) !important;
+    font-size: 0.9rem !important;
 }
+
+/* ============================================
+   FIM DO CABEÇALHO LIMPO
+   ============================================ */
 
 /* SEÇÕES GERAIS */
 .section {
@@ -388,22 +426,22 @@ nav a:hover {
         font-size: 2rem;
     }
 
-    header {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 20px;
+    .header-clean {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 20px !important;
     }
     
-    nav {
-        width: 100%;
-        justify-content: space-between;
-        gap: 15px;
+    .nav-clean {
+        width: 100% !important;
+        justify-content: space-between !important;
+        gap: 15px !important;
     }
     
     .language-switcher {
-        margin-left: 0;
-        align-self: flex-end;
-        margin-top: 10px;
+        margin-left: 0 !important;
+        align-self: flex-end !important;
+        margin-top: 10px !important;
     }
 
     .section {
@@ -452,14 +490,14 @@ nav a:hover {
         font-size: 1.8rem;
     }
 
-    nav {
-        flex-direction: column;
-        gap: 10px;
-        align-items: flex-start;
+    .nav-clean {
+        flex-direction: column !important;
+        gap: 10px !important;
+        align-items: flex-start !important;
     }
 
-    nav a {
-        font-size: 0.9rem;
+    .nav-clean a {
+        font-size: 0.9rem !important;
     }
     
     .foto-perfil {
@@ -477,13 +515,24 @@ nav a:hover {
     }
     
     .language-switcher {
-        align-self: flex-start;
-        margin-top: 10px;
+        align-self: flex-start !important;
+        margin-top: 10px !important;
     }
 }
 
 /* Estilo para link ativo no menu */
-nav a.active {
+.nav-clean a.active {
     color: var(--cor-destaque) !important;
-    font-weight: 600;
+    font-weight: 600 !important;
+}
+
+/* REMOÇÃO EXTRA DE QUALQUER ELEMENTO OCULTO */
+body *:not(.nav-clean):not(.language-switcher):not(.lang-btn):not(.lang-separator) {
+    max-width: 100% !important;
+}
+
+/* Garantir que não haja overflow de texto */
+.header-clean {
+    text-overflow: clip !important;
+    white-space: nowrap !important;
 }
