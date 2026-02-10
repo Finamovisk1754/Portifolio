@@ -28,31 +28,30 @@ body {
 }
 
 /* ============================================
-   CABEÇALHO LIMPO - SEM "MATHEUS FINAMOR"
+   CABEÇALHO LIMPO - MOBILE FRIENDLY
    ============================================ */
 
-/* HEADER LIMPO - FORÇAR REMOÇÃO DO NOME */
 .header-clean {
-    all: unset;
-    display: flex !important;
-    justify-content: space-between !important;
-    align-items: center !important;
-    padding: 30px 0 !important;
-    border-bottom: 1px solid var(--cor-borda) !important;
-    background-color: var(--cor-fundo) !important;
-    width: 100% !important;
-    position: sticky !important;
-    top: 0 !important;
-    z-index: 100 !important;
-    background-color: rgba(10, 10, 10, 0.95) !important;
-    flex-wrap: wrap !important;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    border-bottom: 1px solid var(--cor-borda);
+    background-color: var(--cor-fundo);
+    width: 100%;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background-color: rgba(10, 10, 10, 0.98);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
 }
 
-/* Garantir que não haja texto extra */
+/* Remover regras CSS antigas que podem estar causando problemas */
 .header-clean::before,
 .header-clean::after,
 .header-clean span,
-.header-clean div:not(.language-switcher):not(nav),
+.header-clean div:not(.language-switcher):not(.nav-clean),
 .header-clean h1,
 .header-clean h2,
 .header-clean h3,
@@ -60,84 +59,93 @@ body {
 .header-clean h5,
 .header-clean h6,
 .header-clean p {
-    display: none !important;
-    visibility: hidden !important;
-    content: "" !important;
-    width: 0 !important;
-    height: 0 !important;
-    opacity: 0 !important;
-    overflow: hidden !important;
+    display: none;
+    visibility: hidden;
+    content: "";
+    width: 0;
+    height: 0;
+    opacity: 0;
+    overflow: hidden;
 }
 
 /* NAVEGAÇÃO LIMPA */
 .nav-clean {
-    all: unset;
-    display: flex !important;
-    gap: 30px !important;
-    align-items: center !important;
-    flex-wrap: wrap !important;
-    flex: 1 !important;
+    display: flex;
+    gap: 25px;
+    align-items: center;
+    flex-wrap: wrap;
+    flex: 1;
 }
 
 .nav-clean a {
-    all: unset;
-    color: var(--cor-texto) !important;
-    text-decoration: none !important;
-    font-weight: 500 !important;
-    transition: color 0.3s !important;
-    padding: 8px 0 !important;
-    cursor: pointer !important;
-    font-family: var(--fonte-principal) !important;
-    font-size: 1rem !important;
+    color: var(--cor-texto);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+    padding: 8px 0;
+    cursor: pointer;
+    font-family: var(--fonte-principal);
+    font-size: 1rem;
+    white-space: nowrap;
 }
 
 .nav-clean a:hover {
-    color: var(--cor-destaque) !important;
+    color: var(--cor-destaque);
+}
+
+.nav-clean a.active {
+    color: var(--cor-destaque);
+    font-weight: 600;
 }
 
 /* BOTÃO DE IDIOMA */
 .language-switcher {
-    display: flex !important;
-    align-items: center !important;
-    gap: 10px !important;
-    margin-left: 20px !important;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-left: 15px;
 }
 
 .lang-btn {
-    background: none !important;
-    border: none !important;
-    color: var(--cor-texto) !important;
-    font-family: var(--fonte-principal) !important;
-    font-size: 0.9rem !important;
-    font-weight: 500 !important;
-    cursor: pointer !important;
-    padding: 5px 10px !important;
-    border-radius: 4px !important;
-    transition: all 0.3s !important;
+    background: none;
+    border: none;
+    color: var(--cor-texto);
+    font-family: var(--fonte-principal);
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    padding: 6px 12px;
+    border-radius: 4px;
+    transition: all 0.3s;
+    min-width: 40px;
 }
 
 .lang-btn:hover {
-    background-color: rgba(255, 255, 255, 0.1) !important;
+    background-color: rgba(255, 255, 255, 0.1);
 }
 
 .lang-btn.active {
-    color: var(--cor-destaque) !important;
-    font-weight: 600 !important;
+    color: var(--cor-destaque);
+    font-weight: 600;
+    background-color: rgba(0, 217, 255, 0.1);
 }
 
 .lang-separator {
-    color: var(--cor-borda) !important;
-    font-size: 0.9rem !important;
+    color: var(--cor-borda);
+    font-size: 0.9rem;
 }
 
 /* ============================================
-   FIM DO CABEÇALHO LIMPO
+   SEÇÕES GERAIS
    ============================================ */
 
-/* SEÇÕES GERAIS */
 .section {
     padding: 80px 0;
     border-bottom: 1px solid var(--cor-borda);
+}
+
+.section:last-of-type {
+    border-bottom: none;
 }
 
 .section-title {
@@ -146,7 +154,10 @@ body {
     font-weight: 700;
 }
 
-/* SOBRE MIM COM IMAGEM */
+/* ============================================
+   SOBRE MIM COM IMAGEM
+   ============================================ */
+
 .sobre-container {
     display: grid;
     grid-template-columns: 1fr 300px;
@@ -187,7 +198,10 @@ body {
     border-color: var(--cor-destaque);
 }
 
-/* ÍCONES SOCIAIS */
+/* ============================================
+   ÍCONES SOCIAIS
+   ============================================ */
+
 .social-icons {
     display: flex;
     gap: 20px;
@@ -217,9 +231,16 @@ body {
     transform: translateY(-3px);
 }
 
-/* STACK TECNOLÓGICO */
+/* ============================================
+   STACK TECNOLÓGICO
+   ============================================ */
+
 .stack-categoria {
     margin-bottom: 50px;
+}
+
+.stack-categoria:last-child {
+    margin-bottom: 0;
 }
 
 .stack-categoria h2 {
@@ -254,7 +275,10 @@ body {
     cursor: default;
 }
 
-/* EXPERIÊNCIA */
+/* ============================================
+   EXPERIÊNCIA
+   ============================================ */
+
 .experiencia-item {
     background-color: var(--cor-secundaria);
     padding: 30px;
@@ -262,6 +286,10 @@ body {
     margin-bottom: 30px;
     border: 1px solid var(--cor-borda);
     transition: all 0.3s;
+}
+
+.experiencia-item:last-child {
+    margin-bottom: 0;
 }
 
 .experiencia-item:hover {
@@ -308,7 +336,14 @@ body {
     line-height: 1.6;
 }
 
-/* IDIOMAS */
+.exp-descricao li:last-child {
+    margin-bottom: 0;
+}
+
+/* ============================================
+   IDIOMAS
+   ============================================ */
+
 .idiomas-container {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -361,7 +396,10 @@ body {
     line-height: 1.6;
 }
 
-/* PROJETOS */
+/* ============================================
+   PROJETOS COM IMAGENS
+   ============================================ */
+
 .projetos-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -371,39 +409,87 @@ body {
 
 .projeto-card {
     background-color: var(--cor-secundaria);
-    padding: 30px;
     border-radius: 10px;
     border: 1px solid var(--cor-borda);
     display: flex;
     flex-direction: column;
     transition: all 0.3s;
     height: 100%;
+    overflow: hidden;
 }
 
 .projeto-card:hover {
     border-color: var(--cor-destaque);
     transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 217, 255, 0.1);
 }
 
-.projeto-card h3 {
+/* Container da imagem */
+.projeto-imagem {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Imagem do projeto */
+.projeto-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+/* Efeito de zoom na imagem ao passar o mouse */
+.projeto-card:hover .projeto-img {
+    transform: scale(1.05);
+}
+
+/* Overlay sutil na imagem */
+.projeto-imagem::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.projeto-card:hover .projeto-imagem::after {
+    opacity: 1;
+}
+
+/* Conteúdo do projeto (texto abaixo da imagem) */
+.projeto-conteudo {
+    padding: 25px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.projeto-conteudo h3 {
     font-size: 1.4rem;
     margin-bottom: 15px;
     color: var(--cor-destaque);
     line-height: 1.4;
 }
 
-.projeto-card p {
+.projeto-conteudo p {
     margin-bottom: 25px;
     line-height: 1.7;
     flex-grow: 1;
     color: #e0e0e0;
 }
 
+/* Tags de tecnologias */
 .projeto-techs {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
-    margin-bottom: 25px;
+    margin-top: auto;
 }
 
 .tech-tag {
@@ -415,42 +501,97 @@ body {
     border: 1px solid rgba(0, 217, 255, 0.3);
 }
 
-/* CERTIFICAÇÕES (estilo adicional) */
+/* ============================================
+   CERTIFICAÇÕES
+   ============================================ */
+
 #certificacoes .tech-grid {
     margin-top: 20px;
 }
 
-/* RESPONSIVIDADE */
+/* ============================================
+   RESPONSIVIDADE MOBILE - CORRIGIDA
+   ============================================ */
+
 @media (max-width: 768px) {
     .section-title {
         font-size: 2rem;
     }
 
+    /* HEADER MOBILE - CORREÇÃO */
     .header-clean {
-        flex-direction: column !important;
-        align-items: flex-start !important;
-        gap: 20px !important;
+        padding: 15px 0;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+        border-bottom: 1px solid var(--cor-borda);
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        height: auto;
+        min-height: 60px;
+        backdrop-filter: blur(15px);
+        -webkit-backdrop-filter: blur(15px);
+    }
+    
+    /* Container principal precisa de padding-top para compensar header fixo */
+    .container {
+        padding-top: 70px;
+    }
+    
+    /* Ajuste do layout do header */
+    .header-clean {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 15px;
+        padding: 15px 20px;
     }
     
     .nav-clean {
-        width: 100% !important;
-        justify-content: space-between !important;
-        gap: 15px !important;
+        width: 100%;
+        justify-content: space-between;
+        gap: 10px;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        padding-bottom: 5px;
+        -webkit-overflow-scrolling: touch;
+    }
+    
+    .nav-clean a {
+        font-size: 0.9rem;
+        padding: 6px 8px;
+        flex-shrink: 0;
+    }
+    
+    .nav-clean::-webkit-scrollbar {
+        height: 3px;
+    }
+    
+    .nav-clean::-webkit-scrollbar-track {
+        background: var(--cor-secundaria);
+    }
+    
+    .nav-clean::-webkit-scrollbar-thumb {
+        background: var(--cor-destaque);
+        border-radius: 3px;
     }
     
     .language-switcher {
-        margin-left: 0 !important;
-        align-self: flex-end !important;
-        margin-top: 10px !important;
+        margin-left: 0;
+        align-self: flex-end;
+        margin-top: 5px;
+        order: 3;
+        width: 100%;
+        justify-content: flex-end;
     }
 
     .section {
-        padding: 60px 0;
+        padding: 50px 0;
     }
 
     .sobre-container {
         grid-template-columns: 1fr;
-        gap: 40px;
+        gap: 30px;
     }
     
     .sobre-imagem {
@@ -459,7 +600,7 @@ body {
     }
     
     .foto-perfil {
-        max-width: 250px;
+        max-width: 220px;
     }
     
     .social-icons {
@@ -478,9 +619,19 @@ body {
 
     .projetos-grid {
         grid-template-columns: 1fr;
+        gap: 20px;
     }
 
     .tech-item, .experiencia-item {
+        padding: 20px;
+    }
+    
+    /* Ajuste das imagens dos projetos em mobile */
+    .projeto-imagem {
+        height: 180px;
+    }
+    
+    .projeto-conteudo {
         padding: 20px;
     }
 }
@@ -488,20 +639,32 @@ body {
 @media (max-width: 480px) {
     .section-title {
         font-size: 1.8rem;
+        margin-bottom: 30px;
     }
 
+    /* HEADER MOBILE PEQUENO */
+    .header-clean {
+        padding: 12px 15px;
+        min-height: 55px;
+    }
+    
+    .container {
+        padding-top: 65px;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    
     .nav-clean {
-        flex-direction: column !important;
-        gap: 10px !important;
-        align-items: flex-start !important;
+        gap: 8px;
     }
-
+    
     .nav-clean a {
-        font-size: 0.9rem !important;
+        font-size: 0.85rem;
+        padding: 5px 6px;
     }
     
     .foto-perfil {
-        max-width: 200px;
+        max-width: 180px;
     }
     
     .social-icons {
@@ -515,23 +678,174 @@ body {
     }
     
     .language-switcher {
-        align-self: flex-start !important;
-        margin-top: 10px !important;
+        margin-top: 3px;
+    }
+    
+    .lang-btn {
+        padding: 4px 10px;
+        font-size: 0.85rem;
+        min-width: 36px;
+    }
+    
+    .exp-cabecalho h2 {
+        font-size: 1.3rem;
+    }
+    
+    .exp-periodo {
+        font-size: 0.8rem;
+        padding: 4px 12px;
+    }
+    
+    /* Ajuste das imagens dos projetos em mobile pequeno */
+    .projeto-imagem {
+        height: 160px;
+    }
+    
+    .projeto-conteudo {
+        padding: 15px;
+    }
+    
+    .projeto-conteudo h3 {
+        font-size: 1.2rem;
+        margin-bottom: 12px;
+    }
+    
+    .projeto-conteudo p {
+        font-size: 0.95rem;
+        line-height: 1.6;
+        margin-bottom: 20px;
+    }
+    
+    .tech-tag {
+        font-size: 0.75rem;
+        padding: 4px 8px;
+    }
+    
+    .section {
+        padding: 40px 0;
     }
 }
 
-/* Estilo para link ativo no menu */
+/* ============================================
+   CORREÇÃO PARA TELAS MUITO PEQUENAS
+   ============================================ */
+
+@media (max-width: 360px) {
+    .header-clean {
+        padding: 10px 12px;
+    }
+    
+    .nav-clean a {
+        font-size: 0.8rem;
+        padding: 4px 5px;
+    }
+    
+    .lang-btn {
+        font-size: 0.8rem;
+        padding: 3px 8px;
+    }
+    
+    .section-title {
+        font-size: 1.6rem;
+    }
+    
+    .projeto-imagem {
+        height: 140px;
+    }
+    
+    .foto-perfil {
+        max-width: 160px;
+    }
+}
+
+/* ============================================
+   FIX PARA IOS SAFARI
+   ============================================ */
+
+@supports (-webkit-touch-callout: none) {
+    .header-clean {
+        position: -webkit-sticky;
+    }
+    
+    /* Corrige altura do header no iOS */
+    .header-clean {
+        padding-top: env(safe-area-inset-top);
+        padding-top: constant(safe-area-inset-top);
+    }
+    
+    .container {
+        padding-top: calc(70px + env(safe-area-inset-top));
+        padding-top: calc(70px + constant(safe-area-inset-top));
+    }
+}
+
+/* ============================================
+   ANIMAÇÃO SUAVE PARA SCROLL
+   ============================================ */
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px; /* Compensa o header fixo */
+}
+
+@media (max-width: 768px) {
+    html {
+        scroll-padding-top: 70px;
+    }
+}
+
+@media (max-width: 480px) {
+    html {
+        scroll-padding-top: 65px;
+    }
+}
+
+/* ============================================
+   ESTILOS EXTRAS
+   ============================================ */
+
+/* Estilo para links ativos no menu de navegação */
 .nav-clean a.active {
-    color: var(--cor-destaque) !important;
-    font-weight: 600 !important;
+    position: relative;
 }
 
-/* REMOÇÃO EXTRA DE QUALQUER ELEMENTO OCULTO */
-body *:not(.nav-clean):not(.language-switcher):not(.lang-btn):not(.lang-separator) {
-    max-width: 100% !important;
+.nav-clean a.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--cor-destaque);
+    border-radius: 2px;
 }
 
-/* Garantir que não haja overflow de texto */
+/* No mobile, ajusta a linha ativa */
+@media (max-width: 768px) {
+    .nav-clean a.active::after {
+        height: 1.5px;
+        bottom: -2px;
+    }
+}
+
+/* Placeholder para imagens que não carregarem */
+.projeto-img {
+    background-color: var(--cor-secundaria);
+}
+
+/* Efeito de loading sutil para imagens */
+.projeto-img.loading {
+    opacity: 0.7;
+    filter: blur(5px);
+}
+
+/* Acessibilidade: foco nos cards */
+.projeto-card:focus-within {
+    outline: 2px solid var(--cor-destaque);
+    outline-offset: 2px;
+}
+
+/* Remoção extra de qualquer elemento oculto */
 .header-clean {
     text-overflow: clip !important;
     white-space: nowrap !important;
